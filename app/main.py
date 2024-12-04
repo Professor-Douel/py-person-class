@@ -15,9 +15,9 @@ def create_person_list(people: list) -> list:
         name = person["name"]
         instance = Person.people[name]
 
-        if "wife" in person and person["wife"]:
+        if person.get("wife"):
             instance.wife = instance.people[person["wife"]]
-        elif "husband" in person and person["husband"]:
+        elif person.get("husband"):
             instance.husband = instance.people[person["husband"]]
 
     return person_list
